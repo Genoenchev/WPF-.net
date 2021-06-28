@@ -36,14 +36,29 @@
         <ComboBox x:Name="myComboBox" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Margin="10">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding FullName}"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="20" Width="20" Source="D:\Projects\Github\WPF-.net\WPFDemo\Images\corgi.jpg"/>
+                        <TextBlock Text="{Binding FirstName}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding LastName}"/>
+
+                    </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Button x:Name="submitButton" Content="Run Me" Grid.Column="1"
                    Grid.Row="4" Grid.ColumnSpan="2" Margin="10" 
                    Click="submitButton_Click"/>
-        <Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Source="D:\Projects\Github\WPF-.net\WPFDemo\Images\img1.jpg"/>
-
+        <!--<Image Grid.Row="1" Grid.Column="4" Grid.RowSpan="6" Source="D:\Projects\Github\WPF-.net\WPFDemo\Images\img1.jpg"/>-->
+        <ScrollViewer  Grid.Row="1" Grid.Column="4" Grid.RowSpan="6">
+            <StackPanel Orientation="Vertical">
+                <Image MaxHeight="200" MaxWidth="200" Source= "D:\Projects\Github\WPF-.net\WPFDemo\Images\img1.jpg"/>
+                <Image MaxHeight="200" MaxWidth="200" Source= "D:\Projects\Github\WPF-.net\WPFDemo\Images\img2.jpg"/>
+                <Image MaxHeight="200" MaxWidth="200" Source= "D:\Projects\Github\WPF-.net\WPFDemo\Images\img3.jpg"/>
+                <Image MaxHeight="200" MaxWidth="200" Source= "D:\Projects\Github\WPF-.net\WPFDemo\Images\img4.jpg"/>
+            </StackPanel>
+        </ScrollViewer>
+        
+        
     </Grid>
 </Window>
