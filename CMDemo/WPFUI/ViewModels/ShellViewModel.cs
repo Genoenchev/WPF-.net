@@ -19,6 +19,7 @@ namespace WPFUI.ViewModels
             People.Add(new PersonModel { FirstName = "Ivan",  LastName = "Ivanov" });
             People.Add(new PersonModel { FirstName = "Test",  LastName = "Test" });
         }
+
         public string FirstName
         {
             get 
