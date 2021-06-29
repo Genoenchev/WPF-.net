@@ -67,5 +67,15 @@ namespace WPFUI.ViewModels
             }
         }
 
+        public bool CanClearText()
+        {
+            throw new NotImplementedException();
+        }
+        public void ClearText()
+        {
+            FirstName = "";
+            LastName = "";
+        }
+
     }
 }
