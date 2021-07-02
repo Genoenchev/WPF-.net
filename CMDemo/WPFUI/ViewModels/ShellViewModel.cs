@@ -2,11 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using WPFUI.Models;
 
 namespace WPFUI.ViewModels
 {
-    public class ShellViewModel : Screen
+    public class ShellViewModel : Conductor<object>
     {
         private string _firstName = "Tim";
         private string _lastName;
@@ -67,14 +68,33 @@ namespace WPFUI.ViewModels
             }
         }
 
-        public bool CanClearText()
+        public bool CanClearText(string firstName, string lastName)
         {
-            throw new NotImplementedException();
+            //return !String.IsNullOrWhiteSpace(firstName) || !String.IsNullOrWhiteSpace(lastName);
+            if (String.IsNullOrWhiteSpace(firstName) && string.IsNullOrWhiteSpace(lastName))
+            {
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
         }
-        public void ClearText()
+        public void ClearText(string firstName, string lastName)
         {
             FirstName = "";
             LastName = "";
+        }
+
+       
+            public async Task LoadPageOneAsync()
+            {
+                await ActivateItemAsync(new FirstChildViewModel());
+            }
+        
+        public async Task LoadPageTwoAsync()
+        {
+            await ActivateItemAsync(new SecondChildViewModel());
         }
 
     }
